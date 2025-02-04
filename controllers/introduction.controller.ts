@@ -2,6 +2,7 @@ const IntroductionController = {
     getUser(req: any, res: any){
         try {
             const name = req.params.name
+            if (!name) return res.status(400).json({message: "name not provided", status: 400})
             const data = {
                 "saksham": "Hello, Myself Saksham Kohli",
                 "ekuspreet": "Hello, Myself Ekuspreet Singh",
@@ -12,7 +13,7 @@ const IntroductionController = {
                     return res.status(200).json({name: key, introduction: value})
                 }
             }
-            res.status(200).json({message: "Name not found"})
+            res.status(404).json({message: "Name not found"})
         } catch (error: any) {
             res.error(error)
         }

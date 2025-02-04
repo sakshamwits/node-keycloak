@@ -2,7 +2,8 @@ const FrequencyController = {
     frequency(req: any, res: any){
         try {
             const data = req.body
-            const parameter = req.params.parameter
+            let parameter = req.params.parameter
+            if (!parameter) parameter = "getEarliest"
             const dataArray = data.dataArray
             const mapper: {[key:string]:number} = {}
             let maxCount = 0
