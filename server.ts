@@ -4,6 +4,8 @@ import routes from "./routes"
 const app = express()
 const port: number = 3000
 
+app.use(express.json())
+
 app.get('/', function (req, res) {
   res.send('Welcome')
 })

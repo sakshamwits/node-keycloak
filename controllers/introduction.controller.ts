@@ -1,4 +1,4 @@
-const UserController = {
+const IntroductionController = {
     getUser(req: any, res: any){
         try {
             const name = req.params.name
@@ -14,9 +14,9 @@ const UserController = {
             }
             res.status(200).json({message: "Name not found"})
         } catch (error: any) {
-            res.status(500).json(error)
+            res.error(error)
         }
     }
 }
 
-export default UserController
+export default IntroductionController

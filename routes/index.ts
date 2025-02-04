@@ -1,8 +1,10 @@
 import express from "express"
-import UserController from "../controllers/user"
+import IntroductionController from "../controllers/introduction.controller"
+import FrequencyController from "../controllers/frequency.controller"
 
 const router = express.Router()
 
-router.get('/:name', UserController.getUser)
+router.get('/introduction/:name', IntroductionController.getUser)
+router.post('/frequency/:parameter', FrequencyController.frequency)
 
 export default router
