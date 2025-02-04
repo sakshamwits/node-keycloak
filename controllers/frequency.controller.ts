@@ -14,17 +14,13 @@ const FrequencyController = {
                     currentCount += mapper[element]
                 }
                 mapper[element] = currentCount
-                if (parameter === "getEarliest"){
-                    if(currentCount > maxCount){
-                        maxCount = currentCount
-                        maxVar = element
-                    }
+                if (parameter === "getEarliest" && currentCount > maxCount){
+                    maxCount = currentCount
+                    maxVar = element
                 }
-                else if (parameter === "getLatest"){
-                    if(currentCount >= maxCount){
-                        maxCount = currentCount
-                        maxVar = element
-                    }
+                else if (parameter === "getLatest" && currentCount >= maxCount){
+                    maxCount = currentCount
+                    maxVar = element
                 }
             })
             res.json({maxCount, maxVar})
